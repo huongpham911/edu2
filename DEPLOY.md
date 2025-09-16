@@ -1,9 +1,12 @@
 # Hướng dẫn Deploy lên Dokploy
 
-## 📋 Yêu cầu
+## 📝 Yêu cầu
 - Docker đã được cài đặt
 - Git repository đã được push lên GitHub
 - Tài khoản Dokploy
+
+### ⚠️ Lưu ý về Port
+Dokploy expect container expose port 3000. Dockerfile đã được cấu hình sẵn cho Dokploy.
 
 ## 🚀 Cách Deploy
 
@@ -35,7 +38,7 @@ REACT_APP_CONTACT_EMAIL=informasi@sman3kutacane.my.id
 docker build -t sman3-kutacane .
 
 # Chạy container
-docker run -p 3000:80 sman3-kutacane
+docker run -p 3000:3000 sman3-kutacane
 ```
 
 ### Hoặc sử dụng docker-compose:
