@@ -6,7 +6,9 @@
 - Tài khoản Dokploy
 
 ### ⚠️ Lưu ý về Port
-Dokploy expect container expose port 3000. Dockerfile đã được cấu hình sẵn cho Dokploy.
+- **Container internal port**: 3000 (cho Dokploy)
+- **Local testing port**: 3001 (tránh conflict)
+- **Dokploy production**: Tự động forward traffic đến port 3000 của container
 
 ## 🚀 Cách Deploy
 
@@ -37,8 +39,8 @@ REACT_APP_CONTACT_EMAIL=informasi@sman3kutacane.my.id
 # Build image
 docker build -t sman3-kutacane .
 
-# Chạy container
-docker run -p 3000:3000 sman3-kutacane
+# Chạy container (map port 3000 của container ra port 3001 trên host)
+docker run -p 3001:3000 sman3-kutacane
 ```
 
 ### Hoặc sử dụng docker-compose:
@@ -46,7 +48,14 @@ docker run -p 3000:3000 sman3-kutacane
 docker-compose up --build
 ```
 
-Sau đó truy cập: http://localhost:3000
+Sau đó truy cập: http://localhost:3001
+
+### 🔄 Giải thích Port Mapping
+```
+Local Development (npm start):     http://localhost:3001
+Local Docker Test:               http://localhost:3001 -> Container:3000
+Dokploy Production:              https://sman3kutacane.my.id -> Container:3000
+```
 
 ## 📁 Cấu trúc Files Deploy
 - `Dockerfile` - Multi-stage build với Nginx
