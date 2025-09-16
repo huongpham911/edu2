@@ -6,9 +6,9 @@
 - Tài khoản Dokploy
 
 ### ⚠️ Lưu ý về Port
-- **Container internal port**: 3001
-- **Dokploy mapping**: 80:3001 (HTTP) và 443:3001 (HTTPS)
-- **Local testing port**: 3001 (direct mapping)
+- **Container internal port**: 3000
+- **Dokploy mapping**: 3000:3001 (Container:3000 → Public:3001)
+- **Local testing**: localhost:3001 → Container:3000
 
 ## 🚀 Cách Deploy
 
@@ -20,7 +20,8 @@
 5. Chọn branch: `main`
 6. Dokploy sẽ tự động detect Dockerfile
 7. Cấu hình port mapping:
-   - Target Port: 3001 (container port)
+   - Container Port: 3000
+   - Target Port: 3001 (Dokploy internal)
    - Public Ports: 80 (HTTP), 443 (HTTPS)
 
 ### 2. Cấu hình Environment Variables (nếu cần)
@@ -42,8 +43,8 @@ REACT_APP_CONTACT_EMAIL=informasi@sman3kutacane.my.id
 # Build image
 docker build -t sman3-kutacane .
 
-# Chạy container trên port 3001
-docker run -p 3001:3001 sman3-kutacane
+# Chạy container: map host:3001 -> container:3000
+docker run -p 3001:3000 sman3-kutacane
 ```
 
 ### Hoặc sử dụng docker-compose:
@@ -56,11 +57,11 @@ Sau đó truy cập: http://localhost:3001
 ### 🔄 Giải thích Port Mapping
 ```
 Local Development (npm start):     http://localhost:3001
-Local Docker Test:               http://localhost:3001 -> Container:3001
+Local Docker Test:               http://localhost:3001 -> Container:3000
 Dokploy Production:
-  - HTTP:  80  -> Container:3001
-  - HTTPS: 443 -> Container:3001
-  - Access: https://sman3kutacane.my.id
+  - User: https://sman3kutacane.my.id (443)
+  - Dokploy: 443 -> 3001 -> Container:3000
+  - Flow: User -> SSL(443) -> Dokploy(3001) -> Container(3000)
 ```
 
 ## 📁 Cấu trúc Files Deploy

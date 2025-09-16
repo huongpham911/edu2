@@ -18,14 +18,24 @@ RUN npm run build
 # Production stage
 FROM nginx:alpine
 
+# Install curl for health checks and debugging
+RUN apk add --no-cache curl
+
 # Copy built app to nginx
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Copy nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Expose port 3001 for Dokploy
-EXPOSE 3001
+# Test nginx config
+RUN nginx -t
 
-# Start nginx on port 3000
+# Expose port 3000 for Dokploy
+EXPOSE 3000
+
+# Add healthcheck
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:3000/health || exit 1
+
+# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
