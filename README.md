@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# SMAN 3 Kutacane - Website Resmi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Website resmi SMAN 3 Kutacane yang dibangun menggunakan React.js.
 
-## Available Scripts
+## 🏫 Tentang Sekolah
 
-In the project directory, you can run:
+SMAN 3 Kutacane adalah Sekolah Menengah Atas Negeri yang terletak di Jl. Raja Bintang Mbarung, Kecamatan Babussalam, Kabupaten Aceh Tenggara, Provinsi Aceh. Sekolah ini terakreditasi B dan berkomitmen memberikan pendidikan berkualitas tinggi.
 
-### `npm start`
+### Informasi Sekolah
+- **NPSN**: 10103098
+- **Status**: Negeri
+- **Akreditasi**: B
+- **Kepala Sekolah**: Ali Sadikin
+- **Website**: [sman3kutacane.my.id](https://sman3kutacane.my.id)
+- **Email**: informasi@sman3kutacane.my.id
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Fitur Website
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Beranda**: Informasi utama dan sambutan
+- **Tentang Kami**: Profil sekolah, visi, misi, dan fasilitas
+- **Galeri**: Dokumentasi kegiatan dan fasilitas sekolah
+- **Kontak**: Informasi kontak dan lokasi dengan peta interaktif
 
-### `npm test`
+## 🛠️ Teknologi yang Digunakan
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React.js** - Library JavaScript untuk membangun UI
+- **React Router** - Untuk navigasi antar halaman
+- **CSS3** - Styling dengan animasi modern
+- **Google Maps** - Integrasi peta lokasi
 
-### `npm run build`
+## 💻 Cara Menjalankan
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone repository ini:
+   ```bash
+   git clone https://github.com/huongpham911/edu2.git
+   cd edu2
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Jalankan development server:
+   ```bash
+   npm start
+   ```
 
-### `npm run eject`
+4. Buka browser dan akses `http://localhost:3000`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📦 Build untuk Production
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📁 Struktur Proyek
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+src/
+├── components/          # Komponen yang dapat digunakan kembali
+│   ├── Navigation.js    # Navigasi utama
+│   └── Footer.js        # Footer website
+├── pages/              # Halaman-halaman utama
+│   ├── Home.js         # Halaman beranda
+│   ├── About.js        # Halaman tentang
+│   ├── Gallery.js      # Halaman galeri
+│   └── Contact.js      # Halaman kontak
+└── assets/             # Asset seperti CSS dan gambar
+```
 
-## Learn More
+## 🌟 Visi dan Misi
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Visi
+"Terwujudnya peserta didik yang beriman, bertaqwa, cerdas, terampil, mandiri, dan berwawasan global untuk menjadi generasi unggul di Bumi Bertuah"
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Misi
+- Meningkatkan keimanan dan ketaqwaan melalui pengamalan ajaran agama
+- Mengoptimalkan proses pembelajaran dan bimbingan
+- Mengembangkan bidang ilmu pengetahuan dan teknologi berdasarkan minat, bakat, dan potensi peserta didik
+- Membina kemandirian peserta didik melalui kegiatan pembiasaan, kewirausahaan, dan pengembangan diri yang terencana dan berkesinambungan
+- Menjalin kerjasama yang harmonis antar warga sekolah dan lembaga terkait
 
-### Code Splitting
+## 📞 Kontak
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Alamat**: JL. RAJA BINTANG MBARUNG, Desa Mbarung, Kec. Babussalam, Kab. Aceh Tenggara 24651, Provinsi Aceh
+- **Email**: informasi@sman3kutacane.my.id
+- **Website**: sman3kutacane.my.id
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© 2025 SMAN 3 Kutacane. Semua hak dilindungi.
